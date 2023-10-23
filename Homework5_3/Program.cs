@@ -59,6 +59,13 @@ namespace Homework5_3
 
                 if (int.TryParse(option, out int result))
                 {
+
+                    if (result == (int)Operation.Exit)
+                    {
+                        Console.WriteLine("Goodbye!");
+                        break;
+                    }
+
                     switch (result)
                     {
                         case (int)Operation.CreateAccount:
