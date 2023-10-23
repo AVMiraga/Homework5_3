@@ -2,7 +2,7 @@
 {
     enum Operation
     {
-        CreateAccount,
+        CreateAccount = 1,
         DepositMoney,
         WithdrawMoney,
         ListTransactions,

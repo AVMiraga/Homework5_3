@@ -13,6 +13,31 @@
 Please select an option: <1-8>
  */
 
+/*
+    =====[ Create an Account ]=====
+1. Choose Account Type - Default Account Type is Checking Account
+2. Choose Currency Type - Default Currency Type is USD
+3. Create Account
+4. Exit
+    ===============================
+ */
+
+/*
+    =====[ Account Types ]=====
+1. Checking Account
+2. Savings Account
+3. Business Account
+    ===========================
+*/
+
+/*
+    =====[ Currency Types ]=====
+1. USD
+2. EUR
+3. AZN
+    ===========================
+*/
+
 namespace Homework5_3.Classes
 {
     internal class Menu
@@ -32,7 +57,5 @@ namespace Homework5_3.Classes
             Console.WriteLine();
             Console.Write("Please select an option: <1-8> ");
         }
-
-
     }
 }
