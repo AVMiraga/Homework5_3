@@ -55,7 +55,7 @@ namespace Homework5_3
             do
             {
                 menu.ShowMenu();
-                string option = Console.ReadLine();
+                string? option = Console.ReadLine();
 
                 if (int.TryParse(option, out int result))
                 {
@@ -74,9 +74,9 @@ namespace Homework5_3
 
                         case (int)Operation.DepositMoney:
                             Console.Write("Please enter account id: ");
-                            int accountId = int.Parse(Console.ReadLine());
+                            int accountId = int.Parse(Console.ReadLine()!);
                             Console.Write("Please enter amount: ");
-                            decimal amount = decimal.Parse(Console.ReadLine());
+                            decimal amount = decimal.Parse(Console.ReadLine()!);
 
                             try
                             {
@@ -96,9 +96,9 @@ namespace Homework5_3
                             break;
                         case (int)Operation.WithdrawMoney:
                             Console.Write("Please enter account id: ");
-                            accountId = int.Parse(Console.ReadLine());
+                            accountId = int.Parse(Console.ReadLine()!);
                             Console.Write("Please enter amount: ");
-                            amount = decimal.Parse(Console.ReadLine());
+                            amount = decimal.Parse(Console.ReadLine()!);
 
                             //Use Try Catch block to handle exceptions
 
@@ -122,7 +122,7 @@ namespace Homework5_3
                             break;
                         case (int)Operation.ListTransactions:
                             Console.Write("Please enter account id: ");
-                            accountId = int.Parse(Console.ReadLine());
+                            accountId = int.Parse(Console.ReadLine()!);
 
                             try
                             {
@@ -138,11 +138,11 @@ namespace Homework5_3
                             break;
                         case (int)Operation.TransferMoney:
                             Console.Write("Please enter sender account id: ");
-                            int senderAccountId = int.Parse(Console.ReadLine());
+                            int senderAccountId = int.Parse(Console.ReadLine()!);
                             Console.Write("Please enter receiver account id: ");
-                            int receiverAccountId = int.Parse(Console.ReadLine());
+                            int receiverAccountId = int.Parse(Console.ReadLine()!);
                             Console.Write("Please enter amount: ");
-                            amount = decimal.Parse(Console.ReadLine());
+                            amount = decimal.Parse(Console.ReadLine()!);
 
                             try
                             {
@@ -166,7 +166,7 @@ namespace Homework5_3
                             //CurrencyExchange(int accountId, CurrencyType currencyType)
 
                             Console.Write("Please enter account id: ");
-                            accountId = int.Parse(Console.ReadLine());
+                            accountId = int.Parse(Console.ReadLine()!);
 
                             Console.WriteLine("===== [ Currency Types ] =====");
                             Console.WriteLine("1. USD");
@@ -175,7 +175,7 @@ namespace Homework5_3
                             Console.WriteLine("==============================");
 
                             Console.Write("Please select an option: <1-3> ");
-                            string currencyTypeOption = Console.ReadLine();
+                            string? currencyTypeOption = Console.ReadLine();
 
                             CurrencyType currencyType = CurrencyType.USD;
 
@@ -214,7 +214,7 @@ namespace Homework5_3
                             break;
                     }
 
-                } 
+                }
             } while (true);
         }
 
@@ -230,7 +230,7 @@ namespace Homework5_3
                 Console.WriteLine("=================================");
                 Console.WriteLine();
                 Console.Write("Please select an option: <1-4> ");
-                string option = Console.ReadLine();
+                string? option = Console.ReadLine();
 
                 switch (option)
                 {
@@ -242,7 +242,7 @@ namespace Homework5_3
                         Console.WriteLine("============================");
 
                         Console.Write("Please select an option: <1-3> ");
-                        string accountTypeOption = Console.ReadLine();
+                        string? accountTypeOption = Console.ReadLine();
 
                         switch (accountTypeOption)
                         {
@@ -272,8 +272,7 @@ namespace Homework5_3
                         Console.WriteLine("==============================");
 
                         Console.Write("Please select an option: <1-3> ");
-                        string currencyTypeOption = Console.ReadLine();
-
+                        string? currencyTypeOption = Console.ReadLine();
                         switch (currencyTypeOption)
                         {
                             case "1":
