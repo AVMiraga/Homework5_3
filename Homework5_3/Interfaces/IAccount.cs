@@ -1,4 +1,4 @@
-﻿namespace Homework5_3.Interface
+﻿namespace Homework5_3.Account_Management
 {
     internal interface IAccount
     {

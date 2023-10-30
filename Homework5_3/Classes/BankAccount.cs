@@ -1,6 +1,6 @@
 ﻿using Homework5_3.Enums;
 using Homework5_3.Exceptions;
-using Homework5_3.Interface;
+using Homework5_3.Account_Management;
 
 namespace Homework5_3.Classes
 {
@@ -11,7 +11,7 @@ namespace Homework5_3.Classes
         public decimal Balance { get; set; }
         public AccountType AccountType { get; set; }
         public CurrencyType CurrencyType { get; set; }
-        public Transaction[] Transactions { get; set; }
+        public List<Transaction> Transactions { get; set; }
 
         //Deposit(decimal amount) - DepositMoney method will be ran in Bank class and add a new transaction to the Transactions array with this method.
         public void Deposit(decimal amount)
@@ -25,14 +25,7 @@ namespace Homework5_3.Classes
                 TransactionDate = DateTime.Now,
                 TransactionType = TransactionType.Deposit
             };
-            Transaction[] tempTransactions = new Transaction[Transactions.Length + 1];
-            for (int i = 0; i < Transactions.Length; i++)
-            {
-                tempTransactions[i] = Transactions[i];
-            }
-
-            tempTransactions[tempTransactions.Length - 1] = transaction;
-            Transactions = tempTransactions;
+            Transactions.Add(transaction);
         }
 
         //Withdraw(decimal amount) - WithdrawMoney method will be ran in Bank class and add a new transaction to the Transactions array with this method.
@@ -47,14 +40,7 @@ namespace Homework5_3.Classes
                 TransactionDate = DateTime.Now,
                 TransactionType = TransactionType.Withdraw
             };
-            Transaction[] tempTransactions = new Transaction[Transactions.Length + 1];
-            for (int i = 0; i < Transactions.Length; i++)
-            {
-                tempTransactions[i] = Transactions[i];
-            }
-
-            tempTransactions[tempTransactions.Length - 1] = transaction;
-            Transactions = tempTransactions;
+            Transactions.Add(transaction);
         }
 
         public BankAccount(AccountType accountType, CurrencyType currencyType)
@@ -63,7 +49,7 @@ namespace Homework5_3.Classes
             Balance = 0;
             AccountType = accountType;
             CurrencyType = currencyType;
-            Transactions = new Transaction[0];
+            Transactions = new List<Transaction>();
         }
 
     }

@@ -39,9 +39,13 @@ Please select an option: <1-8>
 */
 
 
+using Homework5_3.Account_Management;
 using Homework5_3.Classes;
+using Homework5_3.Currency_Management;
 using Homework5_3.Enums;
 using Homework5_3.Exceptions;
+using Homework5_3.Transaction_Management;
+using Homework5_3.Transfer_Management;
 
 namespace Homework5_3
 {
@@ -49,7 +53,8 @@ namespace Homework5_3
     {
         static void Main(string[] args)
         {
-            Bank bank = new Bank();
+            AccountStorageService accountStorageService = new AccountStorageService();
+            Bank bank = new Bank(new BankAccountService(accountStorageService), new TransactionService(accountStorageService), new CurrencyExchangeService(accountStorageService), new TransferService(accountStorageService));
             Menu menu = new Menu();
 
             do
